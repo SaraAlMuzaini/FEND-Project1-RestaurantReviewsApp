@@ -9,7 +9,7 @@ var markers = []
  */
 if('serviceWorker' in navigator) {
     navigator.serviceWorker
-    .register('/FEND-Project7-RestaurantReviewsApp/sw.js')
+    .register('/sw.js')
     .catch(function(error) {
       console.error(error);
   });
@@ -19,7 +19,7 @@ if('serviceWorker' in navigator) {
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
-  initMap(); // added 
+  initMap(); // added
   fetchNeighborhoods();
   fetchCuisines();
 });
@@ -196,6 +196,4 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     }
     self.markers.push(marker);
   });
-} 
-
-
+}
